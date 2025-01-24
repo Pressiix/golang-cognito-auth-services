@@ -42,9 +42,6 @@ func main() {
 	adminApi := app.Group("/api/admin")
 	adminApi.Use(middlewares.CognitoMiddleware(cognitoMiddlewareConfig))
 
-	// Login endpoint
-	app.Post("/login", services.LoginHandler)
-
 	adminApi.Get("/profile", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
 			"status": "success",
@@ -52,7 +49,11 @@ func main() {
 	})
 
 	// Public API group
-	publicApi := app.Group("/api/admin")
+	publicApi := app.Group("/api")
+
+	// Login endpoint
+	app.Post("/login", services.LoginHandler)
+
 	publicApi.Get("/users", func(c *fiber.Ctx) error {
 		users, err := services.GetAllUsers()
 		if err != nil {
