@@ -2,8 +2,8 @@
 
 ## Guide
 
-### ใ Prepare & Setup project
+### 1. Prepare & Setup project
  ``` make prepare ```
 
-### ๅใ Run this project
+### 2. Run this project
 ``` make r ```
