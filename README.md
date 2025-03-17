@@ -1,2 +1,2 @@
-# go-api
-API endoint that create from Go Fiber
+# Example of Golang API with AWS Cognito verification middleware
+
